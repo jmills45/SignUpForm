@@ -1,0 +1,117 @@
+*{
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: #20293a;
+    color: white;
+}
+
+main {
+    display: flex;
+}
+
+.imageContainer {
+    display: flex;
+    align-items: flex-start;
+    flex: 1;
+    background-image: url(./images/max-bender-VmX3vmBecFE-unsplash.jpg);
+    background-position: center ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%; 
+}
+
+.logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.500);
+    margin-top: 10vh;
+    padding: 1rem;
+}
+
+.logo {
+    max-width: 5vw;
+}
+
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+}
+
+.infoContainer > div {
+    flex: 1;
+    font-size: 1.5rem;
+    padding: 3rem;
+    text-align: left;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 100;
+}
+
+.middle {
+    background-color: #394865;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem; 
+}
+
+span {
+    font-style: italic;
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.formRow {
+    display: flex;
+    margin: 1rem 0rem;
+}
+
+.formField {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.formField input {
+    min-height: 2rem;
+    max-width: 80%;
+    border-radius: 5px;
+}
+
+.submitButton {
+    padding: 1rem 2.5rem;
+    font-size: 1.3rem;
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+}
+
+.bottom > p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+.submitButton:hover {
+    background-color: white;
+    color: #20293a
+}
