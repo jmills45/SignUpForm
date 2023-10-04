@@ -1,3 +1,11 @@
+:root {
+    --main-font: clamp(1rem, 1vw, 2rem);
+    --header-font: clamp(1.25rem, 1.5vw, 2rem);
+    --form-font: clamp(1rem, 1vw, 2rem);
+    --main-padding: clamp(1rem, 2rem, 3rem);
+    --main-margin: clamp(1rem, 2rem, 3rem);
+}
+
 *{
     box-sizing: border-box;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -7,25 +15,24 @@
 
 body {
     display: flex;
-    width: 100vw;
-    height: 100vh;
+    height: 100svh;
     background-color: #20293a;
     color: white;
 }
 
 main {
     display: flex;
+    flex: 1;
 }
 
+/* Left Side Hero Image with Logo */
+
 .imageContainer {
-    display: flex;
-    align-items: flex-start;
     flex: 1;
     background-image: url(./images/max-bender-VmX3vmBecFE-unsplash.jpg);
     background-position: center ;
     background-size: cover;
     background-repeat: no-repeat;
-    width: 100%; 
 }
 
 .logoContainer {
@@ -35,12 +42,14 @@ main {
     width: 100%;
     background-color: rgba(0, 0, 0, 0.500);
     margin-top: 10vh;
-    padding: 1rem;
+    padding: var(--main-padding);
 }
 
 .logo {
     max-width: 5vw;
 }
+
+/* Right Side Info with Form */
 
 .infoContainer {
     display: flex;
@@ -50,14 +59,14 @@ main {
 
 .infoContainer > div {
     flex: 1;
-    font-size: 1.5rem;
-    padding: 3rem;
+    font-size: var(--main-font);
+    padding: var(--main-padding);
     text-align: left;
 }
 
 h2 {
-    font-size: 2rem;
-    font-weight: 100;
+    font-size: var(--header-font);
+    font-weight: 600;
 }
 
 .middle {
@@ -75,6 +84,8 @@ span {
     font-style: italic;
 }
 
+/* Input Form and Rows */
+
 .formContainer {
     display: flex;
     flex-direction: column;
@@ -82,24 +93,32 @@ span {
 
 .formRow {
     display: flex;
+    gap: 2rem;
     margin: 1rem 0rem;
 }
 
 .formField {
     display: flex;
+    flex: 1;
     flex-direction: column;
-    width: 40%;
 }
 
 .formField input {
-    min-height: 2rem;
-    max-width: 80%;
     border-radius: 5px;
+    width: clamp(75%, 85%, 90%);
+    font-size: var(--main-font);
+    padding: 0 1rem;
 }
+
+.formField input:focus:invalid {
+    border: 3px solid red;
+}
+
+/* Submit Button for Form */
 
 .submitButton {
     padding: 1rem 2.5rem;
-    font-size: 1.3rem;
+    font-size: var(--form-font);
     background-color: rgba(255, 255, 255, 0);
     color: white;
     border: 1px solid white;
@@ -107,11 +126,58 @@ span {
 }
 
 .bottom > p {
-    font-size: 1.2rem;
+    font-size: var(--form-font);
     margin: 1rem 0;
 }
 
 .submitButton:hover {
     background-color: white;
     color: #20293a
+}
+
+/* Validation and Errors */
+
+.error {
+    border: 3px solid red;
+}
+
+.passwordMatch, .validEmail, .validPhone {
+    display: none;
+    
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 913px) {
+    body {
+        flex-direction: column;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    .infoContainer > div {
+        text-align: center;
+    }
+
+    .formRow {
+        flex-direction: column;
+        text-align: center;
+        gap: .75rem;
+    }
+
+    .formField {
+        align-items: center;
+    }
+
+    .bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .submitButton {
+        width: 80%;
+    }
 }

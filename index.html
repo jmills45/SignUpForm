@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <script src="./java.js" defer></script>
     <title>Odin SignUp Form</title>
 </head>
 <body>   
@@ -34,43 +35,47 @@
 
             <div class="middle">
                 <div class="formHeader">
-                    <p>Let's Do This!</p>
+                    <h2>Let's Do This!</h2>
                 </div>
                 <div class="formContainer">
-                    <form action="" method="post">
+                    <form action="" method="post" id="mainForm">
                         <div class="formRow">
                             <div class="formField">
-                                <label for="first_name">First Name</label>
-                                <input id="first_name" type="text" name="first_name">
+                                <label for="first_name">First Name *</label>
+                                <input id="first_name" type="text" name="first_name" placeholder="Your First Name" required>
                             </div>
 
                             <div class="formField">
-                                <label for="last_name">Last Name</label>
-                                <input id="last_name" type="text" name="last_name">
+                                <label for="last_name">Last Name *</label>
+                                <input id="last_name" type="text" name="last_name" placeholder="Your Last Name" required>
                             </div>
                         </div>
 
                         <div class="formRow">
                             <div class="formField">
-                                <label for="user_email">Email</label>
-                                <input id="user_email" type="email" name="user_email">
+                                <label for="user_email">Email *</label>
+                                <input id="user_email" type="email" name="user_email" placeholder="yourname@gmail.com" required >
+                                <p class="validEmail">*Please enter a valid email address.</p>
                             </div>
 
                             <div class="formField">
-                                <label for="user_phone">Phone Number</label>
-                                <input id="user_phone" type="tel" name="user_phone">
+                                <label for="user_phone">Phone Number *</label>
+                                <input id="user_phone" type="tel" name="user_phone" minlength="10" required>
+                                <p class="validPhone">*Please enter a valid 10 digit telephone number.</p>
                             </div>
                         </div>
 
                         <div class="formRow">
                             <div class="formField">
-                                <label for="user_password">Password</label>
-                                <input id="user_password" type="password" name="user_password">
+                                <label for="user_password">Password *</label>
+                                <input id="user_password" type="password" name="user_password" required>
+                                <p class="passwordMatch">*Your password does not match.</p>
                             </div>
 
                             <div class="formField">
-                                <label for="user_password_confirm">Confirm Password</label>
-                                <input id="user_password_confirm" type="password" name="user_password_confirm">
+                                <label for="user_password_confirm">Confirm Password *</label>
+                                <input id="user_password_confirm" type="password" name="user_password_confirm" required>
+                                <p class="passwordMatch">*Your password does not match.</p>
                             </div>
                         </div>
                     </form>
@@ -78,7 +83,7 @@
             </div>
 
             <div class="bottom">
-                <button class="submitButton">Create Account</button>
+                <button type="submit" form="mainForm" class="submitButton">Create Account</button>
                 <p class="alreadyAccount">Already have an Account? <a href="">Log In</a></p>
             </div>
         </div>
